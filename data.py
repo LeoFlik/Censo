@@ -10,4 +10,4 @@ raw_data = pd.read_html(io)
 
 table = raw_data[3]
 
-g20_df = table.to_csv("g20_data.csv")
+g20_df = table.to_excel("g20_data.xlsx")
