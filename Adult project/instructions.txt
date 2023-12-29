@@ -10,3 +10,16 @@ What percentage of the people who work the minimum number of hours per week have
 What country has the highest percentage of people that earn >50K and what is that percentage?
 Identify the most popular occupation for those who earn >50K in India.
 Use the starter code in the file demographic_data_analyzer. Update the code so all variables set to "None" are set to the appropriate calculation or code. Round all decimals to the nearest tenth.
+
+
+# Calculate the percentage of people with advanced education (>50K)
+advanced_education = ['Bachelors', 'Masters', 'Doctorate']
+high_education = df[df.education.isin(advanced_education) & (df.salary == '>50K')]
+percentage_high_education = (len(high_education) / len(df[df.education.isin(advanced_education)])) * 100
+
+# Calculate the percentage of people without advanced education (>50K)
+low_education = df[~df.education.isin(advanced_education) & (df.salary == '>50K')]
+percentage_low_education = (len(low_education) / len(df[~df.education.isin(advanced_education)])) * 100
+
+print("Percentage of people with advanced education making more than 50K:", percentage_high_education)
+print("Percentage of people without advanced education making more than 50K:", percentage_low_education)
